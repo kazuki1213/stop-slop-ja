@@ -1,68 +1,72 @@
 ---
-name: stop-slop
-description: Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells.
+name: stop-slop-ja
+description: 日本語の文章からAIっぽい定型表現(slop)を取り除く。日本語の文章を書く・編集する・レビューするときに使い、翻訳調・定型句・単調な文末などAIの癖を排除する。
 metadata:
-  trigger: Writing prose, editing drafts, reviewing content for AI patterns
-  author: Hardik Pandya (https://hvpandya.com)
+  trigger: 日本語の文章を書く・推敲する・レビューするとき
+  author: Hardik Pandya (https://hvpandya.com) ／ 日本語版アダプテーション
 ---
 
-# Stop Slop
+# Stop Slop(日本語版)
 
-Eliminate predictable AI writing patterns from prose.
+日本語の文章から、AIが書いたと一目でわかる定型表現(slop)を取り除く。
 
-## Core Rules
+日本語のslopは英語とは違う。語そのものを禁止するのではなく、翻訳調・定型句・単調な文末・空疎な強調といった「癖」を、濫用したときだけ崩す。受動態も主語省略もカタカナ語も、日本語ではごく自然で、無理に直すとかえって翻訳調になる。狙うのは語彙より、文末と構造のパターンだ。
 
-1. **Cut filler phrases.** Remove throat-clearing openers, emphasis crutches, and all adverbs. See [references/phrases.md](references/phrases.md).
+## 基本ルール
 
-2. **Break formulaic structures.** Avoid binary contrasts, negative listings, dramatic fragmentation, rhetorical setups, false agency. See [references/structures.md](references/structures.md).
+1. **前置きを削り、本題から始める。** 「本記事では〜を解説します」「この記事を読めば〜できるようになります」「それでは、さっそく本題に入りましょう」のような、中身のない宣言・効能の約束・つなぎ文は削る。何の話かはタイトルとリードで伝わる。章立ての範囲設定文や講演の口頭体は例外。語彙の一覧は [references/phrases.md](references/phrases.md)。
 
-3. **Use active voice.** Every sentence needs a human subject doing something. No passive constructions. No inanimate objects performing human actions ("the complaint becomes a fix").
+2. **定型の締めをやめる。** 「いかがでしたか」「参考になれば幸いです」「最後までお読みいただきありがとうございました」「自分に合ったものを見つけてください」は、量産SEO記事を象徴する空虚な締め。要点を反復するだけの「今回は〜について解説しました」も同様。締めるなら、結論・判断・次の一歩を一文で書く。詳細は [references/phrases.md](references/phrases.md)。
 
-4. **Be specific.** No vague declaratives ("The reasons are structural"). Name the specific thing. No lazy extremes ("every," "always," "never") doing vague work.
+3. **空疎な強調・誇張をやめる。** 「非常に/とても/極めて」を形容詞ごとに反射的に重ねる、「まさに革命的」「画期的」「圧倒的」「唯一無二」「計り知れない価値」「言っても過言ではない」と根拠なく持ち上げる、「大幅に向上」「飛躍的に改善」と数字を伏せて盛る——これらは具体を語らず強さだけ主張する。語自体は自然なので、根拠とセットでない濫用のときだけ削り、数字・事実に置き換える([references/phrases.md](references/phrases.md))。
 
-5. **Put the reader in the room.** No narrator-from-a-distance voice. "You" beats "People." Specifics beat abstractions.
+4. **無生物主語の翻訳調を直す。** 「このツールはあなたに〜を提供します」「本機能は〜を実現します」「データが教えてくれます」「この変化は私たちに〜を求めています」は、英語 provides you / enables / tells us / requires us の直訳。道具・データを主語に人間の動作や授受(〜してくれる)をさせる癖。人(あなた・作り手)を主語に直し、「〜すれば〜できる」と書く。検出・処理など中立的な機械動作は対象外。修飾句を3つ以上前置きした英語語順の長い連体修飾も翻訳調なので、文に分けて述語を立てる。詳細は [references/structures.md](references/structures.md)。
 
-6. **Vary rhythm.** Mix sentence lengths. Two items beat three. End paragraphs differently. No em dashes.
+5. **断定すべき主張をぼかさない。** 「〜と言えるでしょう」「〜と考えられます/思われます」「〜ではないかと思われます」「〜が求められます」「〜が懸念されます」を反射的に重ね、誰の判断かも確信度もぼかすのが癖。受動・主語省略・推量そのものは日本語で自然なので**全廃ではなく濫用時のみ**直す。論文・報告書の客観記述は正しい文体。言い切れることは言い切り、留保は本当に不確実な箇所に一段だけ残す([references/structures.md](references/structures.md))。
 
-7. **Trust readers.** State facts directly. Skip softening, justification, hand-holding.
+6. **作られた対比・反転をやめる。** 「単なる〜ではありません。〜なのです」「Xではない。Yこそが本質だ」「問題はXではなくYだ」「一見X、実はY」「Xの時代は終わった。これからはYだ」は、英語 Not just X, it's Y の直訳構文。「〜ではなく〜」自体は自然なので、否定する側が藁人形で情報を足さない劇的な二文分割のときだけ崩し、Yを直接言い切る([references/structures.md](references/structures.md))。
 
-8. **Cut quotables.** If it sounds like a pull-quote, rewrite it.
+7. **文末と構造の単調さを崩す。** 「です。です。ます。」と同じ語尾が3文以上続く、体言止め・断片を連打して深刻ぶる、読点を文法の切れ目ごとに機械的に等間隔で打つ、見出しを全部疑問形にする、「3つのポイント」と中身に関係なく三項へ揃える、「**ラベル**:一文」の箇条書きを反射的に多用する——これらはAI出力の見た目の癖。長短を混ぜ、内容で流れを作る([references/structures.md](references/structures.md))。
 
-## Quick Checks
+8. **過剰な丁寧・カタカナ語を抑える。** 「〜させていただきます」「〜となっております」「していただけますと幸いです」を場面を問わず多重に重ねる、定着した和語があるのに「ナレッジ」「プライオリティ」「リソース」を濫用する——これらは過剰さ・曖昧さが癖。許可・恩恵が実在する敬語や、専門領域で定着したカタカナ語は残す。曖昧にぼかしているときだけ、平易な語・具体的な中身に直す([references/phrases.md](references/phrases.md))。
 
-Before delivering prose:
+## クイックチェック
 
-- Any adverbs? Kill them.
-- Any passive voice? Find the actor, make them the subject.
-- Inanimate thing doing a human verb ("the decision emerges")? Name the person.
-- Sentence starts with a Wh- word? Restructure it.
-- Any "here's what/this/that" throat-clearing? Cut to the point.
-- Any "not X, it's Y" contrasts? State Y directly.
-- Three consecutive sentences match length? Break one.
-- Paragraph ends with punchy one-liner? Vary it.
-- Em-dash anywhere? Remove it.
-- Vague declarative ("The implications are significant")? Name the specific implication.
-- Narrator-from-a-distance ("Nobody designed this")? Put the reader in the scene.
-- Meta-joiners ("The rest of this essay...")? Delete. Let the essay move.
+入稿前に確認する。
 
-## Scoring
+- 「本記事では〜を解説します」「この記事を読めば〜できます」と中身のない宣言・効能の約束で始めていないか。
+- 「いかがでしたか」「参考になれば幸いです」「最後までお読みいただき〜」で締めていないか。
+- 末尾で本文をそのまま要約し直すだけ(「今回は〜について解説しました」)になっていないか。
+- 無生物を主語に「〜を提供します」「〜してくれます」「〜を実現します」と書いていないか。人を主語に直せるか。
+- 「非常に/とても/まさに/圧倒的/画期的/唯一無二」を根拠なく重ねていないか。数字・事実に置き換えられるか。
+- 「〜と言えるでしょう」「〜と考えられます」「〜が求められます」で、言い切れる主張をぼかしていないか(濫用のときだけ)。
+- 「単なる〜ではありません。〜なのです」「XではなくYこそが」と作られた対比で盛っていないか。
+- 「です。です。ます。」と同じ語尾が3文以上続いていないか。体言止め・断片を連打していないか。
+- 見出しを全部疑問形で揃えたり、中身が2点なのに「3つのポイント」に水増ししていないか。
+- 「〜させていただきます」「〜となっております」「していただけますと幸いです」を多重に重ねていないか。
+- 定着した和語があるのに「ナレッジ」「リソース」などのカタカナ語でぼかしていないか。
+- 修飾句を3つ以上前置きした長い連体修飾や、「〜化／〜性／〜的」で動作・程度をぼかしていないか。
+- 対象を名指しできる場面で「こちら」を多用していないか。
+- 絵文字・装飾記号(✅🚀💡)、過剰な感嘆符、「**ラベル**:一文」の箇条書きを機械的に並べていないか。
 
-Rate 1-10 on each dimension:
+## 採点
 
-| Dimension | Question |
-|-----------|----------|
-| Directness | Statements or announcements? |
-| Rhythm | Varied or metronomic? |
-| Trust | Respects reader intelligence? |
-| Authenticity | Sounds human? |
-| Density | Anything cuttable? |
+各観点を1〜10で採点する。
 
-Below 35/50: revise.
+| 観点 | 問い |
+|------|------|
+| 直接性 | 主張を言い切っているか、宣言・前置きでぼかしていないか |
+| リズム | 文末・文長・読点に緩急があるか、単調に揃っていないか |
+| 信頼 | 読者を一人前として扱い、過剰な丁寧・補足・効能約束を削っているか |
+| 自然さ | 翻訳調・無生物主語・空疎な強調がなく、ネイティブの肉声に聞こえるか |
+| 密度 | 削っても意味が変わらない語・文・要約がないか、具体が入っているか |
 
-## Examples
+35/50未満は要推敲。
 
-See [references/examples.md](references/examples.md) for before/after transformations.
+## 変換例
 
-## License
+before/after の変換例は [references/examples.md](references/examples.md) を参照。
+
+## ライセンス
 
 MIT

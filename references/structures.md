@@ -1,134 +1,122 @@
-# Structures to Avoid
+# 避けるべき構造・文型
 
-## Binary Contrasts
+日本語AIの癖は語彙だけでなく、文末・構造・記号のレベルに強く出る。ここでは「文・構造・レイアウト」レベルのパターンを扱う。
 
-These create false drama. State the point directly.
+最重要の前提:日本語では受動態も主語省略もそれ自体は自然な表現であり、英語版のように「受動を全廃」「主語を必ず明示」とは考えない。受動・主語省略・無生物主語・対比・体言止め・三項列挙・接続詞などは、いずれもネイティブの優れた書き手が普通に使う正当な技法であり、**全廃ではなく濫用時のみ**直す。各カテゴリの「→ こう直す」を、機械的・反射的・反復的に使われたときだけ適用すること。過剰適用は別の不自然さを生む害になる。
 
-| Pattern | Problem |
-|---------|---------|
-| "Not because X. Because Y." / "Not because X, but because Y." | Telegraphed reversal |
-| "[X] isn't the problem. [Y] is." | Formulaic reframe |
-| "The answer isn't X. It's Y." | Predictable pivot |
-| "It feels like X. It's actually Y." | Setup/reveal cliche |
-| "The question isn't X. It's Y." | Rhetorical misdirection |
-| "Not X. But Y." / "not X, it's Y" / "isn't X, it's Y" | Mechanical contrast |
-| "It's not this. It's that." | Same formula, different words |
-| "stops being X and starts being Y" | False transformation arc |
-| "doesn't mean X, but actually Y" | Negation-then-assertion crutch |
-| "is about X but not Y" | False distinction |
-| "not just X but also Y" | Additive hedge |
+## 対比・否定先行
 
-**Instead:** State Y directly. "The problem is Y." "Y matters here." Drop the negation entirely.
+否定で溜めて結論を劇的に「種明かし」する型。英語の "Not X. It's Y." 系の直訳調。**「AではなくB」という対比そのものは自然な日本語なので禁止しない。** 狙うのは、否定される側Xが藁人形(誰も実際には主張・誤解していない)で情報を持たないのに、Yを盛るためだけに立てられているとき、特に二文に割って反転を演出するとき。判別基準は「Xを丸ごと削っても情報が減らないか」——減らないなら飾り。
 
-## Negative Listing
+| パターン | 問題点 |
+|---------|--------|
+| 「単なる〜ではありません。〜なのです。」 | 否定の前置きで溜め、改行・句点をはさんで「なのです」で種明かしする劇的二文構造。「なのです」は特に強いAIシグナル |
+| 「これは〜ではなく、〜です。」(否定節に情報がない) | 情報価値のない対立を捏造してYを劇的に見せる。Xを消してYだけ言えば足りる |
+| 「Aにすぎない/ただのAだ。重要なのはBだ。」 | 矮小化→本命の二段構え。中身が「マインドセット」「本質」など空疎な抽象語に着地しがち |
+| 「〜という問いではありません。問うべきは〜です。」 | 設問を否定して立て直し、深い洞察を装う。否定される問いは藁人形が多い |
+| 「Xではありません。むしろYです。」(一文ごとに区切る反復) | 英語 "not X; rather, Y" の翻訳調。「むしろ」自体は自然だが、藁人形+硬い区切り+反復が癖 |
+| 「Xではない。Xこそが〜なのだ。」(同語反復+決め文句) | 同じ語を否定文と肯定文で往復させ「〜こそが〜なのだ」で大げさに締める |
+| 「答えは/正解は/問題は〜ではありません。〜です。」 | 「答え」という枠を立てて二文に割る予定調和の方向転換。枠自体が冗長 |
+| 「〜のためではなく、〜のためです。」(目的版) | 否定される目的Xが藁人形で、Yを重く見せる飾り |
+| 「Aだけではありません。Bも、Cも、そしてDも。」 | 文末「だけではありません」をクリフハンガーにし、三項の体言止め列挙で盛るフル構文 |
+| 「一見X、しかし実はY。」「表面的にはX、本質はY。」 | 設定→種明かし。振りのXは知的なフリで、オチのYも大したことがないまま反復される |
+| 「Xの時代は終わりました。これからはYの時代です。」 | 英語 "X is dead. Welcome to Y." の煽り見出し。実証なしに新時代を宣言 |
+| 「これは〜という話/ことではなく、〜という話/ことです。」 | 中身のない「という話/こと」でメタに括り直し、否定→肯定で反転 |
+| 「Aが足りないわけではない。足りないのはBだ。」 | 同一述語を否定→肯定で機械反復する痩せた対称構文(英語 "not that we lack X. We lack Y.") |
+| 「Xは手段にすぎない。目的はYだ。」 | 格下げ→本命の教訓型対句。中身が「価値が大事」など当たり前の話を重々しく飾るだけ |
 
-Listing what something is *not* before revealing what it *is*. A rhetorical striptease.
+**→ こう直す:** 言いたいY(結論・本命・目的)を最初から普通に言い切る。否定の前置き・「なのです」「〜こそが」式の煽り・「答え/という話」などのメタ枠は削る。同じ語の往復をやめる。対比を残す価値があるのは、XとYが読者にとって意味のある別物(本物の誤解の訂正、実在の選択肢の比較)で、否定が情報を足しているときだけ。残すなら一文に流し、二文に割って反転を演出しない。三項の体言止め列挙(「Bも、Cも、そしてDも」)は平叙文で並べ、無理に三項に揃えない。
 
-| Pattern | Problem |
-|---------|---------|
-| "Not a X... Not a Y... A Z." | Dramatic buildup through negation |
-| "It wasn't X. It wasn't Y. It was Z." | Same structure, past tense |
+## 翻訳調・無生物主語
 
-**Instead:** State Z. The reader doesn't need the runway.
+道具・機能・サービス・データ・技術など無生物を主語に立て、人間の動作・授受・効能を語る型。英語の "This tool provides you with X" / "X enables Y" / "the data tells us" の逐語訳。日本語では無生物主語そのものは自然(「システムが検出する」「ツールが自動で振り分ける」は正常)だが、(1)二人称「あなたに/私たちに」を補う、(2)授受「〜してくれる」を付けて擬人化する、(3)人間の認知・感情動詞(理解する/気づく/寄り添う)を取らせる、(4)宣伝・効能コピーで主体と手段を消す、ときに翻訳調になる。
 
-## Dramatic Fragmentation
+| パターン | 問題点 |
+|---------|--------|
+| 「このツールは、あなたに〜を提供します。」 | 無生物主語＋二人称「あなたに」＋提供のフル構文。SaaS紹介文の典型 |
+| 「本機能は、〜を実現します/可能にします。」 | 無生物主語＋「実現/可能に」+宣伝口調。誰が何をできるのかが消える |
+| 「データが、私たちに〜を教えてくれます。」 | 無生物＋授受「〜してくれる」＋「私たちに」。データの擬人化(False Agency) |
+| 「〜することで、〜が可能になります。」 | 英語 "becomes possible/enables" の直訳。動作主をぼかす官公庁調。「〜することで」単体は自然 |
+| 「Xは、〜において重要な役割を果たします。」 | "X plays an important role in Y" の直訳。具体動作を言わず「重要な」「において」でかさ増し |
+| 「このツールは私たちに〜をもたらします。」 | 受け手「私たちに/あなたに」を明示する与格構文。効能コピーの翻訳痕跡 |
+| 「Xが、〜という事実を物語っている。」 | "X tells the story" の直訳。書き手の判断を「事実が語る」と見せかけて回避 |
+| 「この変化は、私たちが〜することを求めています。」 | "In today's world, X demands us to..." の直訳。抽象主語＋私たちに＋求める |
+| 「このツールはあなたのニーズを理解し、〜してくれます。」 | 無生物＋認知・感情動詞(理解する/寄り添う)＋授受。プロダクトに人格を持たせる |
+| 「〜の確認が行われます。」「初期設定が行われます。」 | サ変動詞を名詞化＋受動でくるみ行為者を消す。手順文で誰がやるのか不明になる |
+| 「業務プロセスの改善が図られ、効率化が進められています。」 | 抽象サ変名詞を受動化し当事者を消す官公庁・報告書調(自社の取り組みを語る文脈で) |
 
-Sentence fragments for emphasis read as manufactured profundity.
+**→ こう直す:** 道具を主語から外し、人(あなた・利用者・作り手)を主語に「〜を使えば〜できる」「〜すれば〜できる」「私たちは〜を用意した」と書く。「あなたに/私たちに」は基本削る。授受「〜してくれる」と認知・感情動詞は外し、「〜できる」「〜を助ける」「〜を見ると〜がわかる」に。データは「〜を見ると〜がわかる」「〜から読み取れる」。「実現/可能に/役割を果たす」は人や具体物が主語なら自然なので一律に狩らない。「検出する/処理する/振り分ける/判定する」など中立的な機械動作は対象外(「応答する/対応する/応じる」など擬人化でない反応動詞も、情報を失わないなら残す)。サ変名詞の受動(「確認が行われます」)は、行為者が問題になる手順文では「担当者が確認します」「まず〜してください」と能動に。ただし告知・通知・規程・仕様書など行為者を伏せるのが自然なレジスターでは残してよい。
 
-| Pattern | Problem |
-|---------|---------|
-| "[Noun]. That's it. That's the [thing]." | Performative simplicity |
-| "X. And Y. And Z." | Staccato drama |
-| "This unlocks something. [Word]." | Artificial revelation |
+## 翻訳調・連体修飾の連鎖(英語語順)
 
-**Instead:** Complete sentences. Trust content over presentation.
+ひとつの名詞に「〜に基づいた」「〜を活用した」「〜に特化した」といった修飾句を直列でいくつも被せ、中心の名詞が最後までなかなか出てこない型。英語の後置修飾を日本語の前置きに丸ごと移した翻訳調で、読み手は文末まで何の話か分からない。**連体修飾そのものは自然なので禁止しない。** 狙うのは、修飾句が3つ以上連なり、各句が中身を足さず格好だけ重くしているとき。
 
-## Rhetorical Setups
+| パターン | 問題点 |
+|---------|--------|
+| 「顧客ニーズに基づいた、包括的なソリューション提供に必要な、高度な分析力」 | 修飾句の三重ネストで中心名詞(分析力)が末尾まで現れない |
+| 「最先端の技術を活用した、革新的で使いやすい、次世代のプラットフォーム」 | 中身の薄い形容を直列に積んでいるだけ |
 
-These announce insight rather than deliver it.
+**→ こう直す:** 修飾を分割し、各句に述語を与えて複数の文に開く(「顧客のニーズを踏まえ、分析力を高めた。だから包括的な提案ができる」)。飾りの修飾は削って中心の述語を立ち上げる(「顧客のニーズに応えられるツール」)。ひとつの名詞に修飾句を3つ以上前置きしないことを目安にする。
 
-| Pattern | Problem |
-|---------|---------|
-| "What if [reframe]?" | Socratic posturing |
-| "Here's what I mean:" | Redundant preview |
-| "Think about it:" | Condescending prompt |
-| "And that's okay." | Unnecessary permission |
+## 文末の単調・断片化・体言止め・記号
 
-**Instead:** Make the point. Let readers draw conclusions.
+一文ずつ生成するAIは語尾・文長・読点位置がそろいやすく、内部リズムが平板になる。また体言止め・断片・三点リーダー・全角ダッシュ・絵文字・鉤括弧・感嘆符を、中身の薄さを覆う装飾として濫用する。**いずれも単体・単発・正規用法は自然なので禁止しない。** 狙うのは反復・連打・機械的均一・装飾としての乱用だけ。
 
-## Formulaic Constructions
+| パターン | 問題点 |
+|---------|--------|
+| 「〜です。〜です。〜です。」(同一語尾3文以上) | 棒読みの単調さ。日本語で最も目につく機械臭。だ・である混在に逃げるのは別のslopなので不可 |
+| 「変わる現場。問われる本質。残された時間。」(体言止め連打) | 本文で名詞止めを連打し、述語で言い切る責任を回避して勢いだけでごまかす |
+| 「スピード。それだけ。ただ、それだけ。」(断片の畳みかけ) | 2〜4語の断片を連発し、語調で深刻さを偽装する。中身が空疎 |
+| 「変化の波は、すぐそこに…」(解説文の末尾に三点リーダー) | 言い切るべき文に「…」で余韻を演出。思わせぶりで空虚。使うなら正書法の全角「……」 |
+| 「答えはシンプル——ただ続けるだけ。」(全角ダッシュの挿入・強調) | 英語 em dash の文中挿入・どんでん返しピボットの転写。挿入は読点・丸括弧、ピボットは句点で |
+| 「## ✅ 導入のメリット / - 🚀 〜します」(絵文字の機械的付与) | 見出し・箇条書きの頭に一律で絵文字。フォーマル文書でテンプレ感・子供っぽさ。意味とずれることも多い |
+| 「『ここ』で『大切』なのは『積み重ね』を…」(鉤括弧の乱用強調) | 普通名詞に鉤括弧を連発。強調が打ち消し合い逆に平板。英語イタリック感覚の持ち込み |
+| 「驚きの新機能が登場!? 今すぐチェック!」(感嘆符乱発・煽り見出し) | 「〜とは!?」式の引き見出しと感嘆符の連打。まとめ記事・広告テンプレ調 |
+| 中黒で抽象名詞を連打「効率化・自動化・最適化を実現します」 | スライド箇条書き調。抽象名詞(〜化/〜性/〜力)3語以上＋空虚動詞で中身が空疎 |
+| 同抽象度の美辞を読点で三連「高速で、安全で、使いやすい」 | 並列のリズムと語数で中身の薄さを埋める。各項を消しても情報が減らない |
+| 文長が一定の中文が3文以上続く | 朗読原稿のような平板さ。人間は無意識に長短を混ぜて緩急をつける |
+| 読点を「は/が」「接続詞のあと」に律儀に等間隔で打つ | 数の多寡ではなく機械的な等間隔・打ちすぎが単調(読点版のメトロノーム) |
 
-| Pattern | Problem |
-|---------|---------|
-| "By the time X, I was Y." | Narrative template |
-| "X that isn't Y" | Indirect. Say "X is broken" |
+**→ こう直す:** 同一語尾が3文以上続いたら、敬体のまま構造を変えて散らす(連用中止法・接続でまとめる/体言止め/述語の言い換え/語順変更)。体言止め・断片は完全な文に戻し、本当に効かせたい一点だけ残す(意図的な列挙・対句で、続く文が理由や具体を示すものは残してよい)。三点リーダー・全角ダッシュ・絵文字・鉤括弧・感嘆符は、含み・挿入・強調を「文章の中身」で書き、本当に必要な一箇所に絞る。中黒の抽象名詞連打は「何がどう変わるか」を主語・目的語・数字を持つ文で書く。同義語の三連は一番効く一語に絞るか、各項を別々の具体に展開する。文長は隣接文を接続して長くする/不要語を削って短くするを交互に。読点は意味のまとまりと実際の息継ぎで置き、なくても読める読点を削る。**ただし短文の濫造に走るのは断片化slopへの転落なので避け、長短の自然な混在を狙う。** 見出し・キャプション・短歌的表現・会話の言いさし・引用・術語初出・副題区切り・カジュアルな媒体の絵文字など正規用法は対象外。
 
-## False Agency
+## 過剰な受動・主語ぼかし・ヘッジ
 
-Giving inanimate things human verbs. Complaints don't "become" fixes. Bets don't "live or die." Decisions don't "emerge." A person does something to make those things happen. AI loves this because it avoids naming the actor.
+**日本語の受動・主語省略はそれ自体は自然で、全廃しない。** むしろ無理に主語を立てると翻訳調になる。問題は、断定できる場面で受動・推量・伝聞・自発のヘッジを重ねて言い切りを避け、誰の判断か・誰が動くのかを消したまま「他人事」のトーンを反復するとき。英語版の Passive Voice / Narrator-from-a-Distance に対応するが、日本語では「主語の有無」ではなく**「非断定・主体ぼかし・出典隠しの濫用」**が癖の本体。
 
-| Pattern | Problem |
-|---------|---------|
-| "a complaint becomes a fix" | The complaint did nothing. Someone fixed it. |
-| "a bet lives or dies in days" | Bets don't have lifespans. Someone kills the project or ships it. |
-| "the decision emerges" | Decisions don't emerge. Someone decides. |
-| "the culture shifts" | Cultures don't shift on their own. People change behavior. |
-| "the conversation moves toward" | Conversations don't move. Someone steers. |
-| "the data tells us" | Data sits there. Someone reads it and draws a conclusion. |
-| "the market rewards" | Markets don't reward. Buyers pay for things. |
+| パターン | 問題点 |
+|---------|--------|
+| 「〜と言えるでしょう。」「〜と言っても過言ではありません。」(同一段落で3文以上・文末ごとに反復。単発は自然) | 言い切れる内容を婉曲でくるみ、文字数を水増し。断定回避のシグナル |
+| 「〜という点において〜と言える。」「〜の観点から見ると〜。」(一文ごとに) | 観点フレームの濫用＋「と言える」のヘッジ尾。回りくどく他人事 |
+| 「〜は心身の回復において重要な役割を果たす。」(空疎な穴埋め) | 具体動作を言わず「重要な役割を果たす」で締める(再掲・無生物主語と重なる) |
+| 「〜とされています。」「〜と言われています。」(出典・主体なしで連発) | 誰が言ったのか伏せて権威だけ借りる。断定責任を回避するヘッジ |
+| 「〜が求められます。」「〜が必要とされます。」(連発の漠然べき論) | 「必要だ」で足りる場面で受動化し、誰が動くべきかをぼかす |
+| 「今後の市場拡大が期待されます。」(根拠・主体なしの予測) | 誰が何を根拠に期待しているか伏せ、楽観的な締めを正当化 |
+| 「〜と考えられます。」「〜と思われます。」(ほぼ全段落の結論を締める) | 自発・受身でほぼ全段落の結論をヘッジ。誰の判断かを消す |
+| 「理由としては以下が挙げられます。」「課題としては〜が考えられます。」 | 列挙の機械的な自動導入＋見立てのヘッジ。書き手の判断と体温が抜ける |
+| 「この技術には関心が高まっています。」(裏づけのない盛り上げ導入) | 主体も件数も示さず話題性だけ演出。ブログ・まとめ記事の定型 |
+| 「業績への影響が懸念されます。」(中身の空っぽな逃げの締め) | 確かなのか不確かなのかも曖昧なまま不安だけ残す |
+| 「〜が可能となっています。」「〜が実現されています。」(宣伝文で主体・手段消失) | 何が効いているのか分からない空洞の宣伝文句 |
+| 「望まれます。」「期待されています。」(宙づりの願望) | 願望の主体(顧客・社会・筆者)を消す。英語 "It is hoped/expected that" の直系 |
+| 「研究によって、〜が示されています。」(出典なしの権威づけ) | どの調査・誰のデータか示さず「証明済み」かのように見せる |
+| 「エラーが表示される傾向にあります。」(受動＋ヘッジの二重がけ) | 「される」＋「傾向にある」で行為者も断定も両方ぼかす |
+| 省略＋受動＋推量/評価モダリティを段落で畳みかける | 行為者が一段落まるごと特定できず、書き手不在の他人事になる |
 
-**Instead:** Name the human. "The team fixed it that week" beats "the complaint becomes a fix." If no specific person fits, use "you" to put the reader in the seat.
+**→ こう直す:** まず推量・婉曲・ヘッジを外して言い切れないか試す。事実・根拠があるなら「〜だ」「〜のはずだ」「〜が見込める」と断定する。予測・伝聞・主張には主体と出典・根拠を添える(「2023年の◯◯調査では」「営業部はすでに導入を決め」「現場からは〜という声が」)。列挙の導入は手数を引き受ける形に(「理由は三つある」「主な要因はコストだ」)。**主語の明示は必須ではなく選択肢の一つ**——日本語では「私は」を機械的に足すと逆に翻訳調になるので、判断主体がぼやけて困る箇所、行為者が問題になる手順文だけに補う。本物の伝聞・通説・正当なヘッジ・学術/公的報告/ニュースの慣例的用法・行為者が制度的に不特定な規約や注意書きは、そのレジスターでは自然なので残す。受動・省略そのものは温存し、**「言い切れるのにぼかした濫用」「出典・主体を隠した権威づけ」「同型の反復」**だけを直す。
 
-## Narrator-from-a-Distance
+## 構造・リスト・レイアウトの定型
 
-Floating above the scene instead of putting the reader in it.
+中身ではなく型(数・対称・順序・問答・要約・書式)を機械的に揃える癖。英語版の rule of three / questions answered immediately などに対応するが、日本語でも三連・三段・自問自答・箇条書き・途中要約はいずれも正当な修辞なので、**数や形のために揃えるとき、反復するときだけ**崩す。
 
-| Pattern | Problem |
-|---------|---------|
-| "Nobody designed this." | Disembodied observation |
-| "This happens because..." | Lecturer voice |
-| "This is why..." | Same |
-| "People tend to..." | Armchair sociologist |
+| パターン | 問題点 |
+|---------|--------|
+| 「3つのポイント」「3本柱」と中身に関係なく三項へ整える | 2点で足りるのに水増し、5点を無理に3つへ丸めて重要な点を落とす |
+| 「では何が必要か。覚悟。それだけだ。」(修辞疑問→一語の体言止め→断定の締め) | 問いを立てて即・一語で答え「それだけだ」で畳む。自己啓発・講演調 |
+| 【メリット】【デメリット】を左右対称に揃える | 薄い側を水増し・1点を2点に分割して人工的な均衡を作る |
+| 「ここまでをまとめると」「おさらいすると」(短い記事で・反復する途中要約) | 直前を覚えていられない読者扱い。読者信頼の欠如が構造に出る |
+| 見出しを全て疑問形に揃える「〜とは?」「なぜ〜なのか?」「どうすれば〜?」 | FAQ/SEO自動生成の型。全セクションが「問い→即答」の同じリズム |
+| 「**ラベル**:一文」で全項目を機械的に揃える長い箇条書き | 重要度の差が消え、テンプレに流し込んだカタログのような無機質さ |
+| 「まず→次に→最後に」を順序不要な内容にも被せる | 目次を読み上げる単調さ。順序が本質でない列挙まで序列に押し込む |
+| 「なぜなら〜だからです。」を主張のたびに同じ型・同じ語尾で反復 | PREP法の機械適用。硬い因果構文の連打でテンプレ感が際立つ |
+| 「また/さらに/そして/一方で/つまり」を段落頭に順送りで均等配置 | 接続詞の機械的反復。論理の段取りを過剰に明示し緩急が消える |
 
-**Instead:** Put the reader in the room. "You don't sit down one day and decide to..." beats "Nobody designed this."
-
-## Passive Voice
-
-Every sentence needs a subject doing something. Passive voice hides the actor and drains energy.
-
-| Pattern | Fix |
-|---------|-----|
-| "X was created" | Name who created it |
-| "It is believed that" | Name who believes it |
-| "Mistakes were made" | Name who made them |
-| "The decision was reached" | Name who decided |
-
-**Instead:** Find the actor. Put them at the front of the sentence.
-
-## Sentence Starters to Avoid
-
-| Pattern | Fix |
-|---------|-----|
-| Sentences starting with What, When, Where, Which, Who, Why, How | Restructure. Lead with the subject or the verb. |
-| Paragraphs starting with "So" | Start with content |
-| Sentences starting with "Look," | Remove |
-
-Wh- openers become a crutch. "What makes this hard is..." becomes "The constraint is..." or better, name the specific constraint.
-
-## Rhythm Patterns
-
-| Pattern | Fix |
-|---------|-----|
-| Three-item lists | Use two items or one |
-| Questions answered immediately | Let questions breathe or cut them |
-| Every paragraph ends punchily | Vary endings |
-| Em-dashes | Remove. Use commas or periods. No em dashes at all. |
-| Staccato fragmentation | Don't stack short punchy sentences |
-| "Not always. Not perfectly." | Hedging disguised as reassurance |
-
-## Word Patterns
-
-| Pattern | Problem |
-|---------|---------|
-| Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
-| All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See phrases.md for full list. |
+**→ こう直す:** 項目数は内容で決める(2点なら2点、必要なら4点以上、網羅できないなら「〜など」)。水増しの三つ目は削るか本文に溶かす。自問自答は答えを中身のある一文で返し、「それだけだ」式の締めと反復をやめる。メリット/デメリットは実際の重要度が非対称ならそのまま非対称に書く。途中要約は本当に長い文章で一度だけにし、短い記事では削る。見出しは名詞句・体言止めで端的に示し、疑問形は記事全体で1〜2個まで。箇条書きは本当にリスト向きの内容(用語定義・引数一覧・対照すべき比較)に限り、全項目を同形に揃えず重要な項目は厚く・些末な項目は短く。散文で書ける内容は段落で書く。順序語は本当に順番が意味を持つ手順だけに残す。因果の出し方は一つの型に固定せず「〜ので/〜ため」で軽くつなぐ・並置する・別文で淡々と足すに散らす。接続詞は内容と語順・助詞で関係が分かる箇所を削る。**ただし松竹梅のような確立した三連、意図的な対比、本当に長文での一度の途中要約、API引数の整った「項目名:定義」、レシピの手順順序など、効かせる正当な用法は対象外。**
