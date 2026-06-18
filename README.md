@@ -1,62 +1,66 @@
-# Stop Slop
+# Stop Slop(日本語版)
 
-A skill for removing AI tells from prose.
+日本語の文章から、AIが書いたと一目でわかる癖を取り除くスキル。
 
-<img width="3840" height="2160" alt="G-Yg4RVbIAAhVxW" src="https://github.com/user-attachments/assets/902afc15-1f40-4a9d-af24-8cd67afb8ebf" />
+## これは何か
 
-## What this is
+AIの書く日本語には、はっきりしたパターンがある。翻訳調の無生物主語、定型の前置きと締め、単調な文末、空疎な強調、冗長な言い回し。このスキルは、Claude(や他のLLM)にそれらを見つけて直させる。
 
-AI writing has patterns. Predictable phrases, structures, rhythms. This skill teaches Claude (or any LLM) to catch and remove them.
+英語版の [stop-slop](https://hvpandya.com) を、日本語の癖に合わせて作り直したもの。英語固有のルール(`-ly` 副詞の一掃、Wh- で始まる文の禁止、受動態の全廃など)は日本語に当てはまらないので持ち込んでいない。代わりに、日本語のAI/翻訳調に特有のパターンを軸にしている。
 
-## Skill Structure
+## 設計の原則 — 全廃ではなく濫用時のみ
+
+日本語では、受動態・主語省略・無生物主語・対比・体言止め・三項列挙・カタカナ語・敬語のいずれも、優れた書き手が普通に使う正当な技法だ。これらを一律に禁止すると、かえって不自然な翻訳調になる。
+
+このスキルは、語そのものを禁じない。**濫用・空疎な使い方・機械的な反復のときだけ**直す。各ルールには「残してよい場合」をセットで添えてある。狙うのは語彙より、文末と構造のパターンだ。
+
+## 構成
 
 ```
-stop-slop/
-├── SKILL.md              # Core instructions
+stop-slop-ja/
+├── SKILL.md              # 中核の指示(基本ルール・クイックチェック・採点)
 ├── references/
-│   ├── phrases.md        # Phrases to remove
-│   ├── structures.md     # Structural patterns to avoid
-│   └── examples.md       # Before/after transformations
+│   ├── phrases.md        # 削るべき語句・定型句
+│   ├── structures.md     # 避けるべき構造・文型
+│   └── examples.md       # Before / After 変換例
 ├── README.md
 └── LICENSE
 ```
 
-## Quick start
+## 使い方
 
-**Claude Code:** Add this folder as a skill.
+**Claude Code:** このフォルダをスキルとして追加する。
 
-**Claude Projects:** Upload `SKILL.md` and reference files to project knowledge.
+**Claude プロジェクト:** `SKILL.md` と references をプロジェクトナレッジにアップロードする。
 
-**Custom instructions:** Copy core rules from `SKILL.md`.
+**カスタム指示:** `SKILL.md` の基本ルールをコピーする。
 
-**API calls:** Include `SKILL.md` in your system prompt. Reference files load on demand.
+**API:** `SKILL.md` をシステムプロンプトに入れる。reference は必要に応じて読み込ませる。
 
-## What it catches
+## 何を検出するか
 
-**Banned phrases** - Throat-clearing openers, emphasis crutches, business jargon, all adverbs, vague declaratives, meta-commentary. See `references/phrases.md`.
+**語句・定型句**（[references/phrases.md](references/phrases.md)）— 中身のない前置き、「いかがでしたか」式の締め、空疎な強調・誇張、冗長表現(「することができます」)、過剰敬語、カタカナビジネス語、抽象名詞化(〜化／〜性／〜的)、曖昧な指示語(こちら)、断定回避のヘッジ。
 
-**Structural clichés** - Binary contrasts, negative listings, dramatic fragmentation, rhetorical setups, false agency, narrator-from-a-distance voice, passive voice. See `references/structures.md`.
+**構造・文型**（[references/structures.md](references/structures.md)）— 作られた対比(「単なる〜ではありません。〜なのです」)、翻訳調の無生物主語(「このツールは〜を提供します」)、英語語順の長い連体修飾、文末の単調・体言止め連打・記号の濫用、主体をぼかした受動の連発、機械的な三項列挙や自問自答などレイアウトの定型。
 
-**Sentence-level rules** - No Wh- sentence starters, no em dashes, no staccato fragmentation, no lazy extremes, active voice required.
+## 採点
 
-## Scoring
+各観点を1〜10で採点する。
 
-Rate 1-10 on each dimension:
+| 観点 | 問い |
+|------|------|
+| 直接性 | 主張を言い切っているか、宣言・前置きでぼかしていないか |
+| リズム | 文末・文長・読点に緩急があるか、単調に揃っていないか |
+| 信頼 | 読者を一人前として扱い、過剰な丁寧・補足・効能約束を削っているか |
+| 自然さ | 翻訳調・無生物主語・空疎な強調がなく、ネイティブの肉声に聞こえるか |
+| 密度 | 削っても意味が変わらない語・文・要約がないか、具体が入っているか |
 
-| Dimension | Question |
-|-----------|----------|
-| Directness | Statements or announcements? |
-| Rhythm | Varied or metronomic? |
-| Trust | Respects reader intelligence? |
-| Authenticity | Sounds human? |
-| Density | Anything cuttable? |
+35/50未満は要推敲。
 
-Below 35/50: revise.
+## 原作
 
-## Author
+英語版 [Stop Slop](https://hvpandya.com) — [Hardik Pandya](https://hvpandya.com)
 
-[Hardik Pandya](https://hvpandya.com)
+## ライセンス
 
-## License
-
-MIT. Use freely, share widely.
+MIT. 自由に使い、広く共有してよい。
